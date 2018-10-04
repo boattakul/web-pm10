@@ -1,0 +1,9 @@
+.header-contact{
+    text-align: left;
+}
+.description-contact{
+    text-align: left;
+    border: 1px solid gray;
+    margin: 1%;
+    padding: 10px;
+}

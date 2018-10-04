@@ -1,0 +1,41 @@
+<div class="panel panel-primary">
+  <div class="panel-body">
+    <form [formGroup]="angForm" novalidate>
+
+      <div class="form-group">
+        <label class="col-md-4">Tem</label>
+        <input type="text" class="form-control" formControlName="Tem" #Tem />
+      </div>
+        <div *ngIf="angForm.controls['Tem'].invalid && (angForm.controls['Tem'].dirty || angForm.controls['Tem'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['Tem'].errors.required">
+            Tem is required.
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-md-4">Hum</label>
+        <input type="text" class="form-control" formControlName="Hum" #Hum/>
+      </div>
+        <div *ngIf="angForm.controls['Hum'].invalid && (angForm.controls['Hum'].dirty || angForm.controls['Hum'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['Hum'].errors.required">
+            Hum is required.
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-md-4">PM</label>
+        <input type="text" class="form-control" formControlName="PM" #PM/>
+      </div>
+        <div *ngIf="angForm.controls['PM'].invalid && (angForm.controls['PM'].dirty || angForm.controls['PM'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['PM'].errors.required">
+              PM is required.
+           </div>
+      </div>
+      <div class="form-group">
+        <button (click)="addShare(Tem.value, Hum.value, PM.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Add</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<!--ส่วนของchart-->
+<section class="content">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- AREA CHART -->
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <h3 class="box-title">ค่าปริมาณมาณฝุ่นในอากาศ</h3>
+  
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            </div>
+          </div>
+          <div class="box-body">
+            <div class="chart">
+              <canvas id="areaChart" style="height:250px"></canvas>
+            </div>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+  
+      </div>
+      <!-- /.col (LEFT) -->
+      <div class="col-md-6">
+        <!-- LINE CHART -->
+        <div class="box box-info">
+          <div class="box-header with-border">
+            <h3 class="box-title">ค่าปริมาณความชื้นในอากาศ และอุณหภูมิ</h3>
+  
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            </div>
+          </div>
+          <div class="box-body">
+            <div class="chart">
+              <canvas id="lineChart" style="height:250px"></canvas>
+            </div>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+  
+      </div>
+      <!-- /.col (RIGHT) -->
+    </div>
+    <!-- /.row -->
+  
+  </section>
+  
+<!--ส่วนของการนำเข้าข้อมูลจาก firebase -->
+<table class="table table-striped">
+  <tr>
+    <th>PM</th>
+    <th>Tem</th>
+    <th>Hum</th>
+  </tr>
+  <tr *ngFor="let share of shares | async">
+    <td>{{ share.PM }} </td>
+    <td>{{ share.Tem }}</td>
+    <td>{{ share.Hum }}   </td>
+  </tr>
+</table>
